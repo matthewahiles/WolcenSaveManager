@@ -22,7 +22,7 @@ let formatFile (str:string) =
 
 let fileWatcher (evt:FileSystemEventArgs) =
     System.IO.File.Copy(evt.FullPath, formatFile(evt.FullPath), true)
-    printfn "%A %A" evt.FullPath evt.ChangeType
+    printfn "Backed up: %A" evt.FullPath
 
 let buildWatcher path =
     let watcher = new FileSystemWatcher()
